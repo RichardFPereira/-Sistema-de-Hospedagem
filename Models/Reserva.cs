@@ -95,7 +95,16 @@ namespace _Sistema_de_Hospedagem.Models
         
         public decimal CalcularValorDiaria()
         {
-            decimal totalHospedagem = suite.ValorDiaria * diasReserva;
+            decimal totalHospedagem  = 0.00M;
+            
+            if (diasReserva >= 10)
+            {
+                totalHospedagem = suite.ValorDiaria * diasReserva * 0.90M;
+            }
+            else 
+            {
+                totalHospedagem = suite.ValorDiaria * diasReserva;
+            }            
             return totalHospedagem;
         }
     }
